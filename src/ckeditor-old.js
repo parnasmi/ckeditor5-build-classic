@@ -17,7 +17,6 @@ import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
-import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
@@ -29,22 +28,7 @@ import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
-import TableCellProperties from '@ckeditor/ckeditor5-table/src/tablecellproperties';
-import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
-import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
-import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
-// import Comments from '@ckeditor/ckeditor5-comments/src/comments';
-import FontSize from '@ckeditor/ckeditor5-font/src/fontsize';
-import FontColor from '@ckeditor/ckeditor5-font/src/fontcolor';
-import FontBackgroundColor from '@ckeditor/ckeditor5-font/src/fontbackgroundcolor';
-import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight';
-import HorizontalLine from '@ckeditor/ckeditor5-horizontal-line/src/horizontalline';
-import MediaEmbedToolbar from '@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar';
-import PageBreak from '@ckeditor/ckeditor5-page-break/src/pagebreak';
-// import Title from '@ckeditor/ckeditor5-heading/src/title';
-import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
-// import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -62,7 +46,6 @@ ClassicEditor.builtinPlugins = [
 	Image,
 	ImageCaption,
 	ImageStyle,
-	ImageResize,
 	ImageToolbar,
 	ImageUpload,
 	Indent,
@@ -73,22 +56,7 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TableProperties,
-	TableCellProperties,
-	Code,
-	Alignment,
-	CodeBlock,
-	// Comments,
-	FontSize,
-	FontColor,
-	FontBackgroundColor,
-	Highlight,
-	HorizontalLine,
-	MediaEmbedToolbar,
-	PageBreak,
-	// Title,
-	Underline,
-	// WordCount,
+	TextTransformation
 ];
 
 // Editor configuration.
@@ -97,33 +65,21 @@ ClassicEditor.defaultConfig = {
 		items: [
 			'heading',
 			'|',
-			'alignment',
-			'fontColor',
 			'bold',
 			'italic',
 			'link',
 			'bulletedList',
-			'code',
-			'mediaEmbed',
 			'numberedList',
-			'imageUpload',
 			'|',
 			'indent',
 			'outdent',
 			'|',
-			'codeBlock',
-			// 'comment',
-			'fontSize',
-			'fontBackgroundColor',
-			'highlight',
-			'horizontalLine',
-			'pageBreak',
-			'underline',
+			'imageUpload',
 			'blockQuote',
 			'insertTable',
-			'mediaEmbedToolbar',
+			'mediaEmbed',
 			'undo',
-			'redo',
+			'redo'
 		]
 	},
 	image: {
@@ -138,9 +94,7 @@ ClassicEditor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells',
-			'tableProperties',
-			'tableCellProperties'
+			'mergeTableCells'
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
